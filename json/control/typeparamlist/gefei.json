@@ -1,0 +1,12 @@
+{
+  "sdi_serial":{
+    "sdi_type":{
+      "io":[1,2,3]
+    }
+  },
+  "ip_serial":{
+    "ip_type":{
+      "io":[3,4,5]
+    }
+  }
+}
