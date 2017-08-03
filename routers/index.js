@@ -4,6 +4,7 @@
 let express=require('express');
 router=express.Router();
 let readJsonFile=require('../utils/read-json-file');
+let log=require("../utils/log");
 
 router.get('/control/set',function(req,res){
    res.send('setset!');
@@ -17,6 +18,7 @@ router.post('/control/set/:objectid', function (req, res) {
 /* POST 添加对象 */
 router.post('/control/add/:objectid', function (req, res) {
     let object = readJsonFile.getObject('/control/add','add');
+    log.console(req,object);
     res.send(object);
 });
 
@@ -34,12 +36,14 @@ router.post('/control/config/:objectid/:paramid', function (req, res) {});
 /* GET 获取对象参数属性 */
 router.get('/control/getconfig/:objectid/:paramid', function (req, res) {
     let object = readJsonFile.getObject('/control/getconfig',req.params.objectid);
+    log.console(req,object);
     res.send(object[req.params.paramid]);
 });
 
 /* GET 获取子设备列表 */
 router.get('/control/getsubobject/:objectid', function (req, res) {
     let json=require('../json/control/getsubobject/'+req.params.objectid+'.json');
+    log.console(req,object);
     res.status(200).send(JSON.stringify(json));
 });
 
@@ -56,19 +60,24 @@ router.post('/control/delreporturl', function(req, res) {});
 router.get('/control/getreporturl', function(req, res) {});
 
 /*POST 获取odl的设备列表 */
-router.post('/control/odlnodes', function(req, res) {});
+router.post('/control/odlnodes', function(req, res) {
+    let object=readJsonFile.getObject('/control/odlnodes','1');
+    log.console(req,object);
+    res.send(object);
+});
 
 /*GET 获取指定设备类型的参数列表 */
 router.get('/control/typeparamlist/:company/:serial/:type', function(req, res) {
     let object=readJsonFile.getObject('/control/typeparamlist',req.params.company);
-    console.log(object);
+    log.console(req,object);
     res.send(object[req.params.serial][req.params.type]);
 });
 
 /*POST 获取指定设备的实际接口信息 */
 router.post('/control/getiolists', function(req, res) {
-    let object=readJsonFile.getObject('/control/getiolists','gefeimultiviewerip_24012');
-    console.log(object);
+    let type=req.body['Type'];
+    let object=readJsonFile.getObject('/control/getiolists',type+='_24012');
+    log.console(req,object);
     res.send(JSON.stringify(object));
 });
 

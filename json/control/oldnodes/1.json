@@ -1,0 +1,20 @@
+{
+   "messageid" : "{E45E7397-A0CF-4DCB-841B-F89157B8A21B}",
+   "result" : {
+      "code" : 0,
+      "message" : "get odlnodes success"
+   },
+   "values" : {
+      "count" : 1,
+      "list" : [
+         {
+            "Openflowd" : "12898I3939589",
+            "OpenflowVersion" : "v1.3"
+         },
+         {
+            "OpenflowId" : "128983939589",
+            "OpenflowVersion" : "v1.3"
+         }
+      ]
+   }
+}
