@@ -1,0 +1,8 @@
+{
+   "objectid": "undefined",
+   "messageid": "10001",
+   "result": {
+      "code": 24012,
+      "message": "获取指定设备的实际接口信息失败，该设备不支持获取"
+   }
+}

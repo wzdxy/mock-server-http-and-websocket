@@ -1,0 +1,36 @@
+{
+   "objectid": "undefined",
+   "messageid": "10001",
+   "result": {
+      "code": 0,
+      "message": "获取指定设备的实际接口信息成功"
+   },
+   "values": {
+      "IO": [
+         {
+            "Count": 32,
+            "CountType": "0",
+            "Name": "SDI输入",
+            "Property": "0",
+            "Type": "0",
+            "Config": {
+               "Format": "HD",
+               "Index": "-1",
+               "Type": "0"
+            }
+         },
+         {
+            "Count": 6,
+            "CountType": "0",
+            "Name": "HDMI输出",
+            "Property": "0",
+            "Type": "1",
+            "Config": {
+               "Format": "HD",
+               "Index": "-1",
+               "Type": "1"
+            }
+         }
+      ]
+   }
+}

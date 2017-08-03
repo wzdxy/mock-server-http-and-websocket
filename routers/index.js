@@ -15,7 +15,10 @@ router.post('/control/set/:objectid', function (req, res) {
 });
 
 /* POST 添加对象 */
-router.post('/control/add/:objectid', function (req, res) {});
+router.post('/control/add/:objectid', function (req, res) {
+    let object = readJsonFile.getObject('/control/add','add');
+    res.send(object);
+});
 
 /* POST 删除对象 */
 router.post('/control/del/:objectid', function (req, res) {
@@ -63,7 +66,11 @@ router.get('/control/typeparamlist/:company/:serial/:type', function(req, res) {
 });
 
 /*POST 获取指定设备的实际接口信息 */
-router.post('/control/getiolists', function(req, res) {});
+router.post('/control/getiolists', function(req, res) {
+    let object=readJsonFile.getObject('/control/getiolists','gefeimultiviewerip_24012');
+    console.log(object);
+    res.send(JSON.stringify(object));
+});
 
 /*POST 设置指定设备的实际接口信息 */
 router.post('/control/setiolists', function(req, res) {});
