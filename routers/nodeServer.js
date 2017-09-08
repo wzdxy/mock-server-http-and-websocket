@@ -28,7 +28,9 @@ router.post('/control/add/:objectid', function (req, res) {
 
 /* POST 删除对象 */
 router.post('/control/del/:objectid', function (req, res) {
-    res.send('delete');
+    let object = readJsonFile.getObject('/control/del','del');
+    log.console(req,object);
+    res.send(object);
 });
 
 /* POST 修改对象属性 */
