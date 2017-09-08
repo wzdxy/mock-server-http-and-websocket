@@ -6,6 +6,10 @@ router=express.Router();
 let readJsonFile=require('../utils/read-json-file');
 let log=require("../utils/log");
 
+router.get('/',function(req,res){
+   res.send('setset!');
+});
+
 router.get('/control/set',function(req,res){
    res.send('setset!');
 });
@@ -36,7 +40,7 @@ router.post('/control/config/:objectid/:paramid', function (req, res) {});
 /* GET 获取对象参数属性 */
 router.get('/control/getconfig/:objectid/:paramid', function (req, res) {
     let object = readJsonFile.getObject('/control/getconfig',req.params.objectid);
-    log.console(req,object);
+    log.console(req,object[req.params.paramid]);
     res.send(object[req.params.paramid]);
 });
 
