@@ -11,6 +11,10 @@ var colors = require('colors');
 let log=require("./utils/log");
 let config=require("./config")
 
+app.all('*',function(req,res,next){
+    res.header('Access-Control-Allow-Origin','*')
+    next();
+})
 app.use('/page', express.static('page'))
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -26,7 +30,7 @@ app.post('/ws',function(req,res){
         }
     })
     console.log('WebSocket Send'.bgCyan+' '+String(count).green+' client(s) at '+new Date().toLocaleString().gray,sentContent+"\n");
-    res.send({sent:sentContent,count:count});
+    res.send({code:0,data:sentContent,count:count});
 });
 
 app.get('/', function (req, res) {

@@ -6,9 +6,11 @@ router=express.Router();
 let readJsonFile=require('../utils/read-json-file');
 let log=require("../utils/log");
 
-router.get('/',function(req,res){
-   res.send('setset!');
-});
+// 以下路由可自由配置, 随意删改
+
+// router.get('/',function(req,res){
+//    res.send('setset!');
+// });
 
 router.get('/control/set',function(req,res){
    res.send('setset!');
