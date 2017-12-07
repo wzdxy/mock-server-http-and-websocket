@@ -1,0 +1,1583 @@
+{
+    "objectid":"{2EDEA789-1662-5A46-9D92-C3D40DBF4BF4}",
+    "messageid":"{2EDEA789-1662-5A46-9D92-C3D40DBF4BF4}",
+    "result":{"code":0,"message":"get success"},
+    "values":{
+        "ParamSerial": [
+            {
+                "Id": "Param_Serial_Status",
+                "Name": "总体信息",
+                "Params": [
+                    {
+                        "Id": "TotalStatus",
+                        "Name": "总体状态",
+                        "ValueType": "枚举值",
+                        "DisplayType": "ByLevel",
+                        "Ranges": [
+                            {
+                                "Value": 0,
+                                "Memo": "未知"
+                            },
+                            {
+                                "Value": 1,
+                                "Memo": "提示"
+                            },
+                            {
+                                "Value": 2,
+                                "Memo": "正常"
+                            },
+                            {
+                                "Value": 3,
+                                "Memo": "次要告警"
+                            },
+                            {
+                                "Value": 4,
+                                "Memo": "重要告警"
+                            },
+                            {
+                                "Value": 5,
+                                "Memo": "严重告警"
+                            }
+                        ],
+                        "Value": 2,
+                        "Level": 2
+                    },
+                    {
+                        "Id": "CommonStatus",
+                        "Name": "访问状态",
+                        "TotalFlag": 1,
+                        "ValueType": "枚举值",
+                        "DisplayType": "ByLevel",
+                        "Ranges": [
+                            {
+                                "Value": 0,
+                                "Memo": "访问失败"
+                            },
+                            {
+                                "Value": 1,
+                                "Memo": "访问参数失败"
+                            },
+                            {
+                                "Value": 2,
+                                "Memo": "正常"
+                            }
+                        ],
+                        "Levels": [
+                            {
+                                "Value": 2,
+                                "Check": "x==2"
+                            },
+                            {
+                                "Value": 3,
+                                "Check": "(x==1)||(x==0)"
+                            }
+                        ],
+                        "Value": 2,
+                        "Level": 2
+                    },
+                    {
+                        "Id": "ProductInfo",
+                        "Name": "产品型号",
+                        "Value": "DALLIS MASTER 947/22",
+                        "Level": 0
+                    },
+                    {
+                        "Id": "SerialInfo",
+                        "Name": "序列号",
+                        "Value": "00:0b:72:04:38:17",
+                        "Level": 0
+                    },
+                    {
+                        "Id": "Version",
+                        "Name": "版本",
+                        "Value": "butler: 1.8.0 r11136 (78), streamer: 1.8.0 r11136 (78)",
+                        "Level": 0
+                    },
+                    {
+                        "Id": "InputCount",
+                        "Name": "输入个数",
+                        "ValueType": "整数值",
+                        "Value": 128,
+                        "Level": 0
+                    },
+                    {
+                        "Id": "OutputCount",
+                        "Name": "输出个数",
+                        "ValueType": "整数值",
+                        "Value": 128,
+                        "Level": 0
+                    }
+                ]
+            },
+            {
+                "Id": "Param_Media",
+                "Name": "网络信息",
+                "Params": [
+                    {
+                        "Id": "MediaTable",
+                        "Name": "网络列表",
+                        "ParamType": "Table",
+                        "Params": [
+                            {
+                                "Id": "Media_Name",
+                                "Name": "网络名称",
+                                "Params": [
+                                    {
+                                        "Id": "Media_Name",
+                                        "Name": "网络名称",
+                                        "Index": 0,
+                                        "Value": "RAVENNA Audio-ra0",
+                                        "Level": 0
+                                    }
+                                ]
+                            },
+                            {
+                                "Id": "Media_CaptureCount",
+                                "Name": "输入声道数",
+                                "Params": [
+                                    {
+                                        "Id": "Media_CaptureCount",
+                                        "Name": "输入声道数",
+                                        "Index": 0,
+                                        "Value": "128",
+                                        "Level": 0
+                                    }
+                                ]
+                            },
+                            {
+                                "Id": "Media_PlayCount",
+                                "Name": "输出声道数",
+                                "Params": [
+                                    {
+                                        "Id": "Media_PlayCount",
+                                        "Name": "输出声道数",
+                                        "Index": 0,
+                                        "Value": "128",
+                                        "Level": 0
+                                    }
+                                ]
+                            },
+                            {
+                                "Id": "Media_SampleRate",
+                                "Name": "声音采样率",
+                                "Params": [
+                                    {
+                                        "Id": "Media_SampleRate",
+                                        "Name": "声音采样率",
+                                        "Index": 0,
+                                        "Value": "48000",
+                                        "Level": 0
+                                    }
+                                ]
+                            },
+                            {
+                                "Id": "Media_Sync",
+                                "Name": "同步方式",
+                                "Params": [
+                                    {
+                                        "Id": "Media_Sync",
+                                        "Name": "同步方式",
+                                        "Index": 0,
+                                        "Value": "PTP",
+                                        "Level": 0
+                                    }
+                                ]
+                            },
+                            {
+                                "Id": "Media_Speed",
+                                "Name": "速率",
+                                "ValueType": "整数值",
+                                "DisplayType": "ByNetwork",
+                                "Params": [
+                                    {
+                                        "Id": "Media_Speed",
+                                        "Name": "速率",
+                                        "Index": 0,
+                                        "ValueType": "整数值",
+                                        "DisplayType": "ByNetwork",
+                                        "Value": 1000000000,
+                                        "Level": 0
+                                    }
+                                ]
+                            },
+                            {
+                                "Id": "Media_State",
+                                "Name": "连接状态",
+                                "ValueType": "枚举值",
+                                "DisplayType": "ByLevel",
+                                "Ranges": [
+                                    {
+                                        "Value": 1,
+                                        "Memo": "连接"
+                                    },
+                                    {
+                                        "Value": 0,
+                                        "Memo": "断开"
+                                    }
+                                ],
+                                "Levels": [
+                                    {
+                                        "Value": 2,
+                                        "Check": "x==1"
+                                    },
+                                    {
+                                        "Value": 4,
+                                        "Check": "x==0"
+                                    },
+                                    {
+                                        "Value": 0,
+                                        "Check": "(x<0)||(x>1)"
+                                    }
+                                ],
+                                "Params": [
+                                    {
+                                        "Id": "Media_State",
+                                        "Name": "连接状态",
+                                        "Index": 0,
+                                        "ValueType": "枚举值",
+                                        "DisplayType": "ByLevel",
+                                        "Ranges": [
+                                            {
+                                                "Value": 1,
+                                                "Memo": "连接"
+                                            },
+                                            {
+                                                "Value": 0,
+                                                "Memo": "断开"
+                                            }
+                                        ],
+                                        "Levels": [
+                                            {
+                                                "Value": 2,
+                                                "Check": "x==1"
+                                            },
+                                            {
+                                                "Value": 4,
+                                                "Check": "x==0"
+                                            },
+                                            {
+                                                "Value": 0,
+                                                "Check": "(x<0)||(x>1)"
+                                            }
+                                        ],
+                                        "Value": 1,
+                                        "Level": 2
+                                    }
+                                ]
+                            },
+                            {
+                                "Id": "Media_Ip",
+                                "Name": "IP地址",
+                                "Params": [
+                                    {
+                                        "Id": "Media_Ip",
+                                        "Name": "IP地址",
+                                        "Index": 0,
+                                        "Value": "192.168.40.13",
+                                        "Level": 0
+                                    }
+                                ]
+                            },
+                            {
+                                "Id": "Media_Mask",
+                                "Name": "子网掩码",
+                                "Params": [
+                                    {
+                                        "Id": "Media_Mask",
+                                        "Name": "子网掩码",
+                                        "Index": 0,
+                                        "Value": "255.255.0.0",
+                                        "Level": 0
+                                    }
+                                ]
+                            },
+                            {
+                                "Id": "Media_Mac",
+                                "Name": "物理地址",
+                                "Params": [
+                                    {
+                                        "Id": "Media_Mac",
+                                        "Name": "物理地址",
+                                        "Index": 0,
+                                        "Value": "00:0b:72:04:38:17",
+                                        "Level": 0
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "Id": "Param_Stream",
+                "Name": "流信息",
+                "Params": [
+                    {
+                        "Id": "DestStreamTable",
+                        "Name": "接收流列表",
+                        "ParamType": "Table",
+                        "Params": [
+                            {
+                                "Id": "DestStream_Id",
+                                "Name": "序号",
+                                "Params": [
+                                    {
+                                        "Id": "SrcStream_Id",
+                                        "Name": "序号",
+                                        "Index": 0,
+                                        "Value": "_144848226418689",
+                                        "Level": 0
+                                    },
+                                    {
+                                        "Id": "SrcStream_Id",
+                                        "Name": "序号",
+                                        "Index": 1,
+                                        "Value": "_144848227598339",
+                                        "Level": 0
+                                    },
+                                    {
+                                        "Id": "SrcStream_Id",
+                                        "Name": "序号",
+                                        "Index": 2,
+                                        "Value": "_144902784614402",
+                                        "Level": 0
+                                    },
+                                    {
+                                        "Id": "SrcStream_Id",
+                                        "Name": "序号",
+                                        "Index": 3,
+                                        "Value": "_144903390691353",
+                                        "Level": 0
+                                    },
+                                    {
+                                        "Id": "SrcStream_Id",
+                                        "Name": "序号",
+                                        "Index": 4,
+                                        "Value": "_144903682916379",
+                                        "Level": 0
+                                    }
+                                ]
+                            },
+                            {
+                                "Id": "DestStream_Uri",
+                                "Name": "URI来源",
+                                "WriteFlag": 1,
+                                "ValidType": "ForNonEmpty",
+                                "DisplayType": "ByEdit"
+                            },
+                            {
+                                "Id": "DestStream_Name",
+                                "Name": "URI来源",
+                                "WriteFlag": 1,
+                                "ValidType": "ForNonEmpty",
+                                "DisplayType": "ByEdit",
+                                "Params": [
+                                    {},
+                                    {},
+                                    {},
+                                    {},
+                                    {}
+                                ]
+                            },
+                            {
+                                "Id": "DestStream_Media",
+                                "Name": "网络名称",
+                                "Params": [
+                                    {
+                                        "Id": "SrcStream_Media",
+                                        "Name": "网络名称",
+                                        "Index": 0,
+                                        "Value": "RAVENNA Audio-ra0",
+                                        "Level": 0
+                                    },
+                                    {
+                                        "Id": "SrcStream_Media",
+                                        "Name": "网络名称",
+                                        "Index": 1,
+                                        "Value": "RAVENNA Audio-ra0",
+                                        "Level": 0
+                                    },
+                                    {
+                                        "Id": "SrcStream_Media",
+                                        "Name": "网络名称",
+                                        "Index": 2,
+                                        "Value": "RAVENNA Audio-ra0",
+                                        "Level": 0
+                                    },
+                                    {
+                                        "Id": "SrcStream_Media",
+                                        "Name": "网络名称",
+                                        "Index": 3,
+                                        "Value": "RAVENNA Audio-ra0",
+                                        "Level": 0
+                                    },
+                                    {
+                                        "Id": "SrcStream_Media",
+                                        "Name": "网络名称",
+                                        "Index": 4,
+                                        "Value": "RAVENNA Audio-ra0",
+                                        "Level": 0
+                                    }
+                                ]
+                            },
+                            {
+                                "Id": "DestStream_Multi",
+                                "Name": "组播地址",
+                                "Params": [
+                                    {},
+                                    {},
+                                    {},
+                                    {},
+                                    {}
+                                ]
+                            },
+                            {
+                                "Id": "DestStream_Ip",
+                                "Name": "IP地址",
+                                "Params": [
+                                    {},
+                                    {},
+                                    {},
+                                    {},
+                                    {}
+                                ]
+                            },
+                            {
+                                "Id": "DestStream_Map",
+                                "Name": "输出列表",
+                                "WriteFlag": 1,
+                                "DisplayType": "ByEdit",
+                                "ValidType": "ForNonEmpty",
+                                "Params": [
+                                    {},
+                                    {},
+                                    {},
+                                    {},
+                                    {}
+                                ]
+                            },
+                            {
+                                "Id": "DestStream_FrameSize",
+                                "Name": "帧大小",
+                                "ValueType": "枚举值",
+                                "DisplayType": "ByComboBox",
+                                "Ranges": [
+                                    {
+                                        "Value": 1,
+                                        "Memo": "1"
+                                    },
+                                    {
+                                        "Value": 2,
+                                        "Memo": "2"
+                                    },
+                                    {
+                                        "Value": 4,
+                                        "Memo": "4"
+                                    },
+                                    {
+                                        "Value": 8,
+                                        "Memo": "8"
+                                    },
+                                    {
+                                        "Value": 16,
+                                        "Memo": "16"
+                                    },
+                                    {
+                                        "Value": 32,
+                                        "Memo": "32"
+                                    },
+                                    {
+                                        "Value": 64,
+                                        "Memo": "64"
+                                    },
+                                    {
+                                        "Value": 128,
+                                        "Memo": "128"
+                                    }
+                                ]
+                            },
+                            {
+                                "Id": "DestStream_Delay",
+                                "Name": "延迟",
+                                "WriteFlag": 1,
+                                "ValueType": "整数值",
+                                "ValidType": "ForUInt",
+                                "DisplayType": "ByEdit",
+                                "Values": {
+                                    "Default": 512
+                                },
+                                "Params": [
+                                    {},
+                                    {},
+                                    {},
+                                    {},
+                                    {}
+                                ]
+                            },
+                            {
+                                "Id": "DestStream_Enable",
+                                "Name": "启用",
+                                "WriteFlag": 1,
+                                "ValidType": "ForEnum",
+                                "ValueType": "枚举值",
+                                "DisplayType": "ByCheckBox",
+                                "Values": {
+                                    "Default": 1
+                                },
+                                "Ranges": [
+                                    {
+                                        "Value": 0,
+                                        "Memo": "不启用"
+                                    },
+                                    {
+                                        "Value": 1,
+                                        "Memo": "启用"
+                                    }
+                                ],
+                                "Params": [
+                                    {},
+                                    {},
+                                    {},
+                                    {},
+                                    {}
+                                ]
+                            },
+                            {
+                                "Id": "DestStream_Memo",
+                                "Name": "描述信息",
+                                "Params": [
+                                    {},
+                                    {},
+                                    {},
+                                    {},
+                                    {}
+                                ]
+                            },
+                            {
+                                "Id": "DestStream_Delete",
+                                "Name": "删除",
+                                "WriteFlag": 1,
+                                "DisplayType": "ByButton",
+                                "Params": [
+                                    {},
+                                    {},
+                                    {},
+                                    {},
+                                    {}
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "Id": "SrcStreamTable",
+                        "Name": "发送流列表",
+                        "ParamType": "Table",
+                        "Params": [
+                            {
+                                "Id": "SrcStream_Id",
+                                "Name": "序号",
+                                "Params": [
+                                    {
+                                        "Id": "SrcStream_Id",
+                                        "Name": "序号",
+                                        "Index": 0,
+                                        "Value": "_144848226418689",
+                                        "Level": 0
+                                    },
+                                    {
+                                        "Id": "SrcStream_Id",
+                                        "Name": "序号",
+                                        "Index": 1,
+                                        "Value": "_144848227598339",
+                                        "Level": 0
+                                    },
+                                    {
+                                        "Id": "SrcStream_Id",
+                                        "Name": "序号",
+                                        "Index": 2,
+                                        "Value": "_144902784614402",
+                                        "Level": 0
+                                    },
+                                    {
+                                        "Id": "SrcStream_Id",
+                                        "Name": "序号",
+                                        "Index": 3,
+                                        "Value": "_144903390691353",
+                                        "Level": 0
+                                    },
+                                    {
+                                        "Id": "SrcStream_Id",
+                                        "Name": "序号",
+                                        "Index": 4,
+                                        "Value": "_144903682916379",
+                                        "Level": 0
+                                    }
+                                ]
+                            },
+                            {
+                                "Id": "SrcStream_Name",
+                                "Name": "名称",
+                                "WriteFlag": 1,
+                                "ValidType": "ForNonEmpty",
+                                "DisplayType": "ByEdit",
+                                "Params": [
+                                    {
+                                        "Id": "SrcStream_Name",
+                                        "Name": "名称",
+                                        "Index": 0,
+                                        "WriteFlag": 1,
+                                        "ValidType": "ForNonEmpty",
+                                        "DisplayType": "ByEdit",
+                                        "Value": "test11",
+                                        "Identify": "Device.streaming.sessions.sources._144848226418689.name",
+                                        "Level": 0
+                                    },
+                                    {
+                                        "Id": "SrcStream_Name",
+                                        "Name": "名称",
+                                        "Index": 1,
+                                        "WriteFlag": 1,
+                                        "ValidType": "ForNonEmpty",
+                                        "DisplayType": "ByEdit",
+                                        "Value": "test22",
+                                        "Identify": "Device.streaming.sessions.sources._144848227598339.name",
+                                        "Level": 0
+                                    },
+                                    {
+                                        "Id": "SrcStream_Name",
+                                        "Name": "名称",
+                                        "Index": 2,
+                                        "WriteFlag": 1,
+                                        "ValidType": "ForNonEmpty",
+                                        "DisplayType": "ByEdit",
+                                        "Value": "test13",
+                                        "Identify": "Device.streaming.sessions.sources._144902784614402.name",
+                                        "Level": 0
+                                    },
+                                    {
+                                        "Id": "SrcStream_Name",
+                                        "Name": "名称",
+                                        "Index": 3,
+                                        "WriteFlag": 1,
+                                        "ValidType": "ForNonEmpty",
+                                        "DisplayType": "ByEdit",
+                                        "Value": "test33",
+                                        "Identify": "Device.streaming.sessions.sources._144903390691353.name",
+                                        "Level": 0
+                                    },
+                                    {
+                                        "Id": "SrcStream_Name",
+                                        "Name": "名称",
+                                        "Index": 4,
+                                        "WriteFlag": 1,
+                                        "ValidType": "ForNonEmpty",
+                                        "DisplayType": "ByEdit",
+                                        "Value": "test44",
+                                        "Identify": "Device.streaming.sessions.sources._144903682916379.name",
+                                        "Level": 0
+                                    }
+                                ]
+                            },
+                            {
+                                "Id": "SrcStream_Media",
+                                "Name": "网络名称",
+                                "Params": [
+                                    {
+                                        "Id": "SrcStream_Media",
+                                        "Name": "网络名称",
+                                        "Index": 0,
+                                        "Value": "RAVENNA Audio-ra0",
+                                        "Level": 0
+                                    },
+                                    {
+                                        "Id": "SrcStream_Media",
+                                        "Name": "网络名称",
+                                        "Index": 1,
+                                        "Value": "RAVENNA Audio-ra0",
+                                        "Level": 0
+                                    },
+                                    {
+                                        "Id": "SrcStream_Media",
+                                        "Name": "网络名称",
+                                        "Index": 2,
+                                        "Value": "RAVENNA Audio-ra0",
+                                        "Level": 0
+                                    },
+                                    {
+                                        "Id": "SrcStream_Media",
+                                        "Name": "网络名称",
+                                        "Index": 3,
+                                        "Value": "RAVENNA Audio-ra0",
+                                        "Level": 0
+                                    },
+                                    {
+                                        "Id": "SrcStream_Media",
+                                        "Name": "网络名称",
+                                        "Index": 4,
+                                        "Value": "RAVENNA Audio-ra0",
+                                        "Level": 0
+                                    }
+                                ]
+                            },
+                            {
+                                "Id": "SrcStream_Multi",
+                                "Name": "组播地址",
+                                "WriteFlag": 1,
+                                "ValidType": "ForNonEmpty",
+                                "DisplayType": "ByEdit",
+                                "Params": [
+                                    {
+                                        "Id": "SrcStream_Multi",
+                                        "Name": "组播地址",
+                                        "Index": 0,
+                                        "WriteFlag": 1,
+                                        "ValidType": "ForNonEmpty",
+                                        "DisplayType": "ByEdit",
+                                        "Value": "230.1.1.1",
+                                        "Identify": "Device.streaming.streams.senders._144848226418689.address",
+                                        "Level": 0
+                                    },
+                                    {
+                                        "Id": "SrcStream_Multi",
+                                        "Name": "组播地址",
+                                        "Index": 1,
+                                        "WriteFlag": 1,
+                                        "ValidType": "ForNonEmpty",
+                                        "DisplayType": "ByEdit",
+                                        "Value": "239.2.40.13",
+                                        "Identify": "Device.streaming.streams.senders._144848227598339.address",
+                                        "Level": 0
+                                    },
+                                    {
+                                        "Id": "SrcStream_Multi",
+                                        "Name": "组播地址",
+                                        "Index": 2,
+                                        "WriteFlag": 1,
+                                        "ValidType": "ForNonEmpty",
+                                        "DisplayType": "ByEdit",
+                                        "Value": "239.1.40.13",
+                                        "Identify": "Device.streaming.streams.senders._144902784614402.address",
+                                        "Level": 0
+                                    },
+                                    {
+                                        "Id": "SrcStream_Multi",
+                                        "Name": "组播地址",
+                                        "Index": 3,
+                                        "WriteFlag": 1,
+                                        "ValidType": "ForNonEmpty",
+                                        "DisplayType": "ByEdit",
+                                        "Value": "239.3.40.13",
+                                        "Identify": "Device.streaming.streams.senders._144903390691353.address",
+                                        "Level": 0
+                                    },
+                                    {
+                                        "Id": "SrcStream_Multi",
+                                        "Name": "组播地址",
+                                        "Index": 4,
+                                        "WriteFlag": 1,
+                                        "ValidType": "ForNonEmpty",
+                                        "DisplayType": "ByEdit",
+                                        "Value": "226.10.10.123",
+                                        "Identify": "Device.streaming.streams.senders._144903682916379.address",
+                                        "Level": 0
+                                    }
+                                ]
+                            },
+                            {
+                                "Id": "SrcStream_Ip",
+                                "Name": "IP地址",
+                                "Params": [
+                                    {
+                                        "Id": "SrcStream_Ip",
+                                        "Name": "IP地址",
+                                        "Index": 0,
+                                        "Value": "192.168.40.13",
+                                        "Level": 0
+                                    },
+                                    {
+                                        "Id": "SrcStream_Ip",
+                                        "Name": "IP地址",
+                                        "Index": 1,
+                                        "Value": "192.168.40.13",
+                                        "Level": 0
+                                    },
+                                    {
+                                        "Id": "SrcStream_Ip",
+                                        "Name": "IP地址",
+                                        "Index": 2,
+                                        "Value": "192.168.40.13",
+                                        "Level": 0
+                                    },
+                                    {
+                                        "Id": "SrcStream_Ip",
+                                        "Name": "IP地址",
+                                        "Index": 3,
+                                        "Value": "192.168.40.13",
+                                        "Level": 0
+                                    },
+                                    {
+                                        "Id": "SrcStream_Ip",
+                                        "Name": "IP地址",
+                                        "Index": 4,
+                                        "Value": "192.168.40.13",
+                                        "Level": 0
+                                    }
+                                ]
+                            },
+                            {
+                                "Id": "SrcStream_Map",
+                                "Name": "输入列表",
+                                "WriteFlag": 1,
+                                "ValidType": "ForNonEmpty",
+                                "DisplayType": "ByEdit",
+                                "Params": [
+                                    {
+                                        "Id": "SrcStream_Map",
+                                        "Name": "输入列表",
+                                        "Index": 0,
+                                        "WriteFlag": 1,
+                                        "ValidType": "ForNonEmpty",
+                                        "DisplayType": "ByEdit",
+                                        "Value": "1,2,3,4",
+                                        "Identify": "Device.streaming.streams.senders._144848226418689.map",
+                                        "Level": 0
+                                    },
+                                    {
+                                        "Id": "SrcStream_Map",
+                                        "Name": "输入列表",
+                                        "Index": 1,
+                                        "WriteFlag": 1,
+                                        "ValidType": "ForNonEmpty",
+                                        "DisplayType": "ByEdit",
+                                        "Value": "3,4",
+                                        "Identify": "Device.streaming.streams.senders._144848227598339.map",
+                                        "Level": 0
+                                    },
+                                    {
+                                        "Id": "SrcStream_Map",
+                                        "Name": "输入列表",
+                                        "Index": 2,
+                                        "WriteFlag": 1,
+                                        "ValidType": "ForNonEmpty",
+                                        "DisplayType": "ByEdit",
+                                        "Value": "1,2",
+                                        "Identify": "Device.streaming.streams.senders._144902784614402.map",
+                                        "Level": 0
+                                    },
+                                    {
+                                        "Id": "SrcStream_Map",
+                                        "Name": "输入列表",
+                                        "Index": 3,
+                                        "WriteFlag": 1,
+                                        "ValidType": "ForNonEmpty",
+                                        "DisplayType": "ByEdit",
+                                        "Value": "1,2",
+                                        "Identify": "Device.streaming.streams.senders._144903390691353.map",
+                                        "Level": 0
+                                    },
+                                    {
+                                        "Id": "SrcStream_Map",
+                                        "Name": "输入列表",
+                                        "Index": 4,
+                                        "WriteFlag": 1,
+                                        "ValidType": "ForNonEmpty",
+                                        "DisplayType": "ByEdit",
+                                        "Value": "3,4",
+                                        "Identify": "Device.streaming.streams.senders._144903682916379.map",
+                                        "Level": 0
+                                    }
+                                ]
+                            },
+                            {
+                                "Id": "SrcStream_FrameSize",
+                                "Name": "帧大小",
+                                "ValueType": "枚举值",
+                                "ValidType": "ForEnum",
+                                "DisplayType": "ByComboBox",
+                                "WriteFlag": 1,
+                                "Ranges": [
+                                    {
+                                        "Value": 1,
+                                        "Memo": "1"
+                                    },
+                                    {
+                                        "Value": 2,
+                                        "Memo": "2"
+                                    },
+                                    {
+                                        "Value": 4,
+                                        "Memo": "4"
+                                    },
+                                    {
+                                        "Value": 8,
+                                        "Memo": "8"
+                                    },
+                                    {
+                                        "Value": 16,
+                                        "Memo": "16"
+                                    },
+                                    {
+                                        "Value": 32,
+                                        "Memo": "32"
+                                    },
+                                    {
+                                        "Value": 64,
+                                        "Memo": "64"
+                                    },
+                                    {
+                                        "Value": 128,
+                                        "Memo": "128"
+                                    }
+                                ],
+                                "Values": {
+                                    "Default": 64
+                                },
+                                "Params": [
+                                    {
+                                        "Id": "SrcStream_FrameSize",
+                                        "Name": "帧大小",
+                                        "Index": 0,
+                                        "ValueType": "枚举值",
+                                        "ValidType": "ForEnum",
+                                        "DisplayType": "ByComboBox",
+                                        "WriteFlag": 1,
+                                        "Ranges": [
+                                            {
+                                                "Value": 1,
+                                                "Memo": "1"
+                                            },
+                                            {
+                                                "Value": 2,
+                                                "Memo": "2"
+                                            },
+                                            {
+                                                "Value": 4,
+                                                "Memo": "4"
+                                            },
+                                            {
+                                                "Value": 8,
+                                                "Memo": "8"
+                                            },
+                                            {
+                                                "Value": 16,
+                                                "Memo": "16"
+                                            },
+                                            {
+                                                "Value": 32,
+                                                "Memo": "32"
+                                            },
+                                            {
+                                                "Value": 64,
+                                                "Memo": "64"
+                                            },
+                                            {
+                                                "Value": 128,
+                                                "Memo": "128"
+                                            }
+                                        ],
+                                        "Values": {
+                                            "Default": 64
+                                        },
+                                        "Value": 64,
+                                        "Identify": "Device.streaming.streams.senders._144848226418689.codecParameters.frameSize",
+                                        "Level": 0
+                                    },
+                                    {
+                                        "Id": "SrcStream_FrameSize",
+                                        "Name": "帧大小",
+                                        "Index": 1,
+                                        "ValueType": "枚举值",
+                                        "ValidType": "ForEnum",
+                                        "DisplayType": "ByComboBox",
+                                        "WriteFlag": 1,
+                                        "Ranges": [
+                                            {
+                                                "Value": 1,
+                                                "Memo": "1"
+                                            },
+                                            {
+                                                "Value": 2,
+                                                "Memo": "2"
+                                            },
+                                            {
+                                                "Value": 4,
+                                                "Memo": "4"
+                                            },
+                                            {
+                                                "Value": 8,
+                                                "Memo": "8"
+                                            },
+                                            {
+                                                "Value": 16,
+                                                "Memo": "16"
+                                            },
+                                            {
+                                                "Value": 32,
+                                                "Memo": "32"
+                                            },
+                                            {
+                                                "Value": 64,
+                                                "Memo": "64"
+                                            },
+                                            {
+                                                "Value": 128,
+                                                "Memo": "128"
+                                            }
+                                        ],
+                                        "Values": {
+                                            "Default": 64
+                                        },
+                                        "Value": 64,
+                                        "Identify": "Device.streaming.streams.senders._144848227598339.codecParameters.frameSize",
+                                        "Level": 0
+                                    },
+                                    {
+                                        "Id": "SrcStream_FrameSize",
+                                        "Name": "帧大小",
+                                        "Index": 2,
+                                        "ValueType": "枚举值",
+                                        "ValidType": "ForEnum",
+                                        "DisplayType": "ByComboBox",
+                                        "WriteFlag": 1,
+                                        "Ranges": [
+                                            {
+                                                "Value": 1,
+                                                "Memo": "1"
+                                            },
+                                            {
+                                                "Value": 2,
+                                                "Memo": "2"
+                                            },
+                                            {
+                                                "Value": 4,
+                                                "Memo": "4"
+                                            },
+                                            {
+                                                "Value": 8,
+                                                "Memo": "8"
+                                            },
+                                            {
+                                                "Value": 16,
+                                                "Memo": "16"
+                                            },
+                                            {
+                                                "Value": 32,
+                                                "Memo": "32"
+                                            },
+                                            {
+                                                "Value": 64,
+                                                "Memo": "64"
+                                            },
+                                            {
+                                                "Value": 128,
+                                                "Memo": "128"
+                                            }
+                                        ],
+                                        "Values": {
+                                            "Default": 64
+                                        },
+                                        "Value": 64,
+                                        "Identify": "Device.streaming.streams.senders._144902784614402.codecParameters.frameSize",
+                                        "Level": 0
+                                    },
+                                    {
+                                        "Id": "SrcStream_FrameSize",
+                                        "Name": "帧大小",
+                                        "Index": 3,
+                                        "ValueType": "枚举值",
+                                        "ValidType": "ForEnum",
+                                        "DisplayType": "ByComboBox",
+                                        "WriteFlag": 1,
+                                        "Ranges": [
+                                            {
+                                                "Value": 1,
+                                                "Memo": "1"
+                                            },
+                                            {
+                                                "Value": 2,
+                                                "Memo": "2"
+                                            },
+                                            {
+                                                "Value": 4,
+                                                "Memo": "4"
+                                            },
+                                            {
+                                                "Value": 8,
+                                                "Memo": "8"
+                                            },
+                                            {
+                                                "Value": 16,
+                                                "Memo": "16"
+                                            },
+                                            {
+                                                "Value": 32,
+                                                "Memo": "32"
+                                            },
+                                            {
+                                                "Value": 64,
+                                                "Memo": "64"
+                                            },
+                                            {
+                                                "Value": 128,
+                                                "Memo": "128"
+                                            }
+                                        ],
+                                        "Values": {
+                                            "Default": 64
+                                        },
+                                        "Value": 64,
+                                        "Identify": "Device.streaming.streams.senders._144903390691353.codecParameters.frameSize",
+                                        "Level": 0
+                                    },
+                                    {
+                                        "Id": "SrcStream_FrameSize",
+                                        "Name": "帧大小",
+                                        "Index": 4,
+                                        "ValueType": "枚举值",
+                                        "ValidType": "ForEnum",
+                                        "DisplayType": "ByComboBox",
+                                        "WriteFlag": 1,
+                                        "Ranges": [
+                                            {
+                                                "Value": 1,
+                                                "Memo": "1"
+                                            },
+                                            {
+                                                "Value": 2,
+                                                "Memo": "2"
+                                            },
+                                            {
+                                                "Value": 4,
+                                                "Memo": "4"
+                                            },
+                                            {
+                                                "Value": 8,
+                                                "Memo": "8"
+                                            },
+                                            {
+                                                "Value": 16,
+                                                "Memo": "16"
+                                            },
+                                            {
+                                                "Value": 32,
+                                                "Memo": "32"
+                                            },
+                                            {
+                                                "Value": 64,
+                                                "Memo": "64"
+                                            },
+                                            {
+                                                "Value": 128,
+                                                "Memo": "128"
+                                            }
+                                        ],
+                                        "Values": {
+                                            "Default": 64
+                                        },
+                                        "Value": 64,
+                                        "Identify": "Device.streaming.streams.senders._144903682916379.codecParameters.frameSize",
+                                        "Level": 0
+                                    }
+                                ]
+                            },
+                            {
+                                "Id": "SrcStream_Codec",
+                                "Name": "编码",
+                                "ValueType": "枚举值",
+                                "ValidType": "ForEnum",
+                                "DisplayType": "ByComboBox",
+                                "WriteFlag": 1,
+                                "Ranges": [
+                                    {
+                                        "Value": "L16"
+                                    },
+                                    {
+                                        "Value": "L24"
+                                    },
+                                    {
+                                        "Value": "L32"
+                                    },
+                                    {
+                                        "Value": "AM824"
+                                    }
+                                ],
+                                "Values": {
+                                    "Default": "L24"
+                                },
+                                "Params": [
+                                    {
+                                        "Id": "SrcStream_Codec",
+                                        "Name": "编码",
+                                        "Index": 0,
+                                        "ValueType": "枚举值",
+                                        "ValidType": "ForEnum",
+                                        "DisplayType": "ByComboBox",
+                                        "WriteFlag": 1,
+                                        "Ranges": [
+                                            {
+                                                "Value": "L16"
+                                            },
+                                            {
+                                                "Value": "L24"
+                                            },
+                                            {
+                                                "Value": "L32"
+                                            },
+                                            {
+                                                "Value": "AM824"
+                                            }
+                                        ],
+                                        "Values": {
+                                            "Default": "L24"
+                                        },
+                                        "Value": "L24",
+                                        "Identify": "Device.streaming.streams.senders._144848226418689.codec",
+                                        "Level": 0
+                                    },
+                                    {
+                                        "Id": "SrcStream_Codec",
+                                        "Name": "编码",
+                                        "Index": 1,
+                                        "ValueType": "枚举值",
+                                        "ValidType": "ForEnum",
+                                        "DisplayType": "ByComboBox",
+                                        "WriteFlag": 1,
+                                        "Ranges": [
+                                            {
+                                                "Value": "L16"
+                                            },
+                                            {
+                                                "Value": "L24"
+                                            },
+                                            {
+                                                "Value": "L32"
+                                            },
+                                            {
+                                                "Value": "AM824"
+                                            }
+                                        ],
+                                        "Values": {
+                                            "Default": "L24"
+                                        },
+                                        "Value": "L24",
+                                        "Identify": "Device.streaming.streams.senders._144848227598339.codec",
+                                        "Level": 0
+                                    },
+                                    {
+                                        "Id": "SrcStream_Codec",
+                                        "Name": "编码",
+                                        "Index": 2,
+                                        "ValueType": "枚举值",
+                                        "ValidType": "ForEnum",
+                                        "DisplayType": "ByComboBox",
+                                        "WriteFlag": 1,
+                                        "Ranges": [
+                                            {
+                                                "Value": "L16"
+                                            },
+                                            {
+                                                "Value": "L24"
+                                            },
+                                            {
+                                                "Value": "L32"
+                                            },
+                                            {
+                                                "Value": "AM824"
+                                            }
+                                        ],
+                                        "Values": {
+                                            "Default": "L24"
+                                        },
+                                        "Value": "L24",
+                                        "Identify": "Device.streaming.streams.senders._144902784614402.codec",
+                                        "Level": 0
+                                    },
+                                    {
+                                        "Id": "SrcStream_Codec",
+                                        "Name": "编码",
+                                        "Index": 3,
+                                        "ValueType": "枚举值",
+                                        "ValidType": "ForEnum",
+                                        "DisplayType": "ByComboBox",
+                                        "WriteFlag": 1,
+                                        "Ranges": [
+                                            {
+                                                "Value": "L16"
+                                            },
+                                            {
+                                                "Value": "L24"
+                                            },
+                                            {
+                                                "Value": "L32"
+                                            },
+                                            {
+                                                "Value": "AM824"
+                                            }
+                                        ],
+                                        "Values": {
+                                            "Default": "L24"
+                                        },
+                                        "Value": "L24",
+                                        "Identify": "Device.streaming.streams.senders._144903390691353.codec",
+                                        "Level": 0
+                                    },
+                                    {
+                                        "Id": "SrcStream_Codec",
+                                        "Name": "编码",
+                                        "Index": 4,
+                                        "ValueType": "枚举值",
+                                        "ValidType": "ForEnum",
+                                        "DisplayType": "ByComboBox",
+                                        "WriteFlag": 1,
+                                        "Ranges": [
+                                            {
+                                                "Value": "L16"
+                                            },
+                                            {
+                                                "Value": "L24"
+                                            },
+                                            {
+                                                "Value": "L32"
+                                            },
+                                            {
+                                                "Value": "AM824"
+                                            }
+                                        ],
+                                        "Values": {
+                                            "Default": "L24"
+                                        },
+                                        "Value": "L24",
+                                        "Identify": "Device.streaming.streams.senders._144903682916379.codec",
+                                        "Level": 0
+                                    }
+                                ]
+                            },
+                            {
+                                "Id": "SrcStream_Enable",
+                                "Name": "启用",
+                                "WriteFlag": 1,
+                                "ValidType": "ForEnum",
+                                "ValueType": "枚举值",
+                                "DisplayType": "ByCheckBox",
+                                "Values": {
+                                    "Default": 1
+                                },
+                                "Ranges": [
+                                    {
+                                        "Value": 0,
+                                        "Memo": "不启用"
+                                    },
+                                    {
+                                        "Value": 1,
+                                        "Memo": "启用"
+                                    }
+                                ],
+                                "Params": [
+                                    {
+                                        "Id": "SrcStream_Enable",
+                                        "Name": "启用",
+                                        "Index": 0,
+                                        "WriteFlag": 1,
+                                        "ValidType": "ForEnum",
+                                        "ValueType": "枚举值",
+                                        "DisplayType": "ByCheckBox",
+                                        "Values": {
+                                            "Default": 1
+                                        },
+                                        "Ranges": [
+                                            {
+                                                "Value": 0,
+                                                "Memo": "不启用"
+                                            },
+                                            {
+                                                "Value": 1,
+                                                "Memo": "启用"
+                                            }
+                                        ],
+                                        "Value": 1,
+                                        "Identify": "Device.streaming.streams.senders._144848226418689.enabled",
+                                        "Level": 0
+                                    },
+                                    {
+                                        "Id": "SrcStream_Enable",
+                                        "Name": "启用",
+                                        "Index": 1,
+                                        "WriteFlag": 1,
+                                        "ValidType": "ForEnum",
+                                        "ValueType": "枚举值",
+                                        "DisplayType": "ByCheckBox",
+                                        "Values": {
+                                            "Default": 1
+                                        },
+                                        "Ranges": [
+                                            {
+                                                "Value": 0,
+                                                "Memo": "不启用"
+                                            },
+                                            {
+                                                "Value": 1,
+                                                "Memo": "启用"
+                                            }
+                                        ],
+                                        "Value": 1,
+                                        "Identify": "Device.streaming.streams.senders._144848227598339.enabled",
+                                        "Level": 0
+                                    },
+                                    {
+                                        "Id": "SrcStream_Enable",
+                                        "Name": "启用",
+                                        "Index": 2,
+                                        "WriteFlag": 1,
+                                        "ValidType": "ForEnum",
+                                        "ValueType": "枚举值",
+                                        "DisplayType": "ByCheckBox",
+                                        "Values": {
+                                            "Default": 1
+                                        },
+                                        "Ranges": [
+                                            {
+                                                "Value": 0,
+                                                "Memo": "不启用"
+                                            },
+                                            {
+                                                "Value": 1,
+                                                "Memo": "启用"
+                                            }
+                                        ],
+                                        "Value": 1,
+                                        "Identify": "Device.streaming.streams.senders._144902784614402.enabled",
+                                        "Level": 0
+                                    },
+                                    {
+                                        "Id": "SrcStream_Enable",
+                                        "Name": "启用",
+                                        "Index": 3,
+                                        "WriteFlag": 1,
+                                        "ValidType": "ForEnum",
+                                        "ValueType": "枚举值",
+                                        "DisplayType": "ByCheckBox",
+                                        "Values": {
+                                            "Default": 1
+                                        },
+                                        "Ranges": [
+                                            {
+                                                "Value": 0,
+                                                "Memo": "不启用"
+                                            },
+                                            {
+                                                "Value": 1,
+                                                "Memo": "启用"
+                                            }
+                                        ],
+                                        "Value": 1,
+                                        "Identify": "Device.streaming.streams.senders._144903390691353.enabled",
+                                        "Level": 0
+                                    },
+                                    {
+                                        "Id": "SrcStream_Enable",
+                                        "Name": "启用",
+                                        "Index": 4,
+                                        "WriteFlag": 1,
+                                        "ValidType": "ForEnum",
+                                        "ValueType": "枚举值",
+                                        "DisplayType": "ByCheckBox",
+                                        "Values": {
+                                            "Default": 1
+                                        },
+                                        "Ranges": [
+                                            {
+                                                "Value": 0,
+                                                "Memo": "不启用"
+                                            },
+                                            {
+                                                "Value": 1,
+                                                "Memo": "启用"
+                                            }
+                                        ],
+                                        "Value": 1,
+                                        "Identify": "Device.streaming.streams.senders._144903682916379.enabled",
+                                        "Level": 0
+                                    }
+                                ]
+                            },
+                            {
+                                "Id": "SrcStream_Delete",
+                                "Name": "删除",
+                                "WriteFlag": 1,
+                                "DisplayType": "ByButton",
+                                "Params": [
+                                    {
+                                        "Id": "SrcStream_Delete",
+                                        "Name": "删除",
+                                        "Index": 0,
+                                        "WriteFlag": 1,
+                                        "DisplayType": "ByButton",
+                                        "Value": "1",
+                                        "Identify": "Device.streaming.sessions.sources._144848226418689.remove",
+                                        "Level": 0
+                                    },
+                                    {
+                                        "Id": "SrcStream_Delete",
+                                        "Name": "删除",
+                                        "Index": 1,
+                                        "WriteFlag": 1,
+                                        "DisplayType": "ByButton",
+                                        "Value": "1",
+                                        "Identify": "Device.streaming.sessions.sources._144848227598339.remove",
+                                        "Level": 0
+                                    },
+                                    {
+                                        "Id": "SrcStream_Delete",
+                                        "Name": "删除",
+                                        "Index": 2,
+                                        "WriteFlag": 1,
+                                        "DisplayType": "ByButton",
+                                        "Value": "1",
+                                        "Identify": "Device.streaming.sessions.sources._144902784614402.remove",
+                                        "Level": 0
+                                    },
+                                    {
+                                        "Id": "SrcStream_Delete",
+                                        "Name": "删除",
+                                        "Index": 3,
+                                        "WriteFlag": 1,
+                                        "DisplayType": "ByButton",
+                                        "Value": "1",
+                                        "Identify": "Device.streaming.sessions.sources._144903390691353.remove",
+                                        "Level": 0
+                                    },
+                                    {
+                                        "Id": "SrcStream_Delete",
+                                        "Name": "删除",
+                                        "Index": 4,
+                                        "WriteFlag": 1,
+                                        "DisplayType": "ByButton",
+                                        "Value": "1",
+                                        "Identify": "Device.streaming.sessions.sources._144903682916379.remove",
+                                        "Level": 0
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        "Id": "DestStream_Create",
+                        "Name": "创建接收流",
+                        "WriteFlag": 1,
+                        "DisplayType": "ByButton",
+                        "ValidType": "ForNonEmpty",
+                        "Identify": "Device.streaming.sessions.destinations.create"
+                    },
+                    {
+                        "Id": "SrcStream_Create",
+                        "Name": "创建发送流",
+                        "WriteFlag": 1,
+                        "DisplayType": "ByButton",
+                        "ValidType": "ForNonEmpty",
+                        "Identify": "Device.streaming.sessions.sources.create"
+                    }
+                ]
+            }
+        ]
+    }
+}

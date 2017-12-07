@@ -13,69 +13,69 @@ let log=require("./utils/log");
 app.use(bodyParser.json()); // for parsing application/json
 
 var wsArray=[];
-
-let sendString=JSON.stringify(            
-    {
-        "Type":"MatrixXpt",          
-        "Params":
-        [
-           {
-               "MatrixId":"45AA915B-B449-8597-6836-8AC5F0F88B71",  //逻辑矩阵ID
-     
-               "Index":1,    //输出序号
-               "Value":"2"     //交叉输入序号    
-           },
-           {
-               "MatrixId":"AC9D766D-2CDA-85FF-F63A-82122989048A",
-               "Index":1,
-               "Value":"3" 
-           }
-        ]                
-     }
-)
-
+var wsPort = 9001
 var socket=new WebSocket.Server({
-    port:9001
+    port:wsPort
+},function(){
+    var host = nodeServer.address().address;
+    var port = nodeServer.address().port;
+    console.log('webSocket Mock 已启动 , listenning as ws://:::%s'.white.bgGreen, wsPort);
 })
 socket.on('connection',function(ws){
     wsArray.push(ws);
+    console.log('WebSocket Connected'.bgCyan+' at '+new Date().toLocaleString().gray+' Total Client(s):'+wsArray.filter(ws=>ws.OPEN===ws.readyState).length+"\n");
+    let status=2,active=2,database=2,net=2;
+    setInterval(function () {    
+        let str=JSON.stringify({
+            Type:"ServerStatus",
+            Status:status,
+            Server:"192.168.3.48",
+            Params:{
+                Active:active,
+                Database:database,   
+                Net:net
+            }
+        })
+        // console.log(str);        
+        if(ws.readyState===1){
+            ws.send(str);
+        }
+        status=status===2?5:2;
+        active=status===2?2:5;
+        database=status===2?2:5;                
+    },2000)
     ws.onopen=function(){
-        console.log('open');
-        ws.send('hello');
+        console.log('open');                
     }
     ws.onmessage = function(){
         
     }
-    ws.onclose = function(){
-        console.log('close');
+    ws.onclose = function(e,a){
+        console.log('WebSocket Closed'.bgYellow+' Code:'+String(e.code).green+' '+e.reason+' at '+new Date().toLocaleString().gray+' Total Client(s):'+wsArray.filter(ws=>ws.OPEN===ws.readyState).length+"\n");    
     }
     ws.onerror = function(e){
         console.log('error',e)
     }
-    // setInterval(function(){
-        
-    //     console.log(new Date().toLocaleTimeString(),sendString);
-    //     if(ws.OPEN===ws.readyState)ws.send(sendString);
-    // },15000);
-    
 })
 
-
 app.use(function(req,res,next){
-    log.console(req,{});
-    setTimeout(function(){
-        wsArray.forEach(function(ws){            
-            if(ws.OPEN===ws.readyState)ws.send(sendString);
-        })
-        console.log(sendString);
-    },10)
-    // socket.listeners.send(JSON.stringify({name:'zzz'}));
-    // socket.send(JSON.stringify({name:'zzz'}));
     next();
+});  
+app.post('/ws',function(req,res){
+    let sentContent=req.body;
+    let count=0;
+    wsArray.forEach(function(ws){
+        if(ws.OPEN===ws.readyState){
+            ws.send(JSON.stringify(sentContent));
+            count++;
+        }
+    })
+    console.log('WebSocket Send'.bgCyan+' '+String(count).green+' client(s) at '+new Date().toLocaleString().gray,JSON.stringify(sentContent,null,4)+"\n");
+    res.send(JSON.stringify({sent:sentContent,count:count}));
 });
 
 app.get('/', function (req, res) {
-    res.send('Hello World!');
+    res.send('Hello Mock!');
 });
 app.use(cppRouters);
 app.use(nodeRouters);
@@ -85,15 +85,13 @@ var nodeServer = app.listen(8122, function () {
     var host = nodeServer.address().address;
     var port = nodeServer.address().port;
 
-    console.log('Node 代理 Mock 已启动 , listening at http://%s:%s'.green, host, port);
-    console.log("正在等待请求 ...\n".white.bgGreen);
+    console.log('Node 代理 Mock 已启动 , listening at http://%s:%s'.white.bgGreen, host, port);    
 });
 
 var cppServer = app.listen(8126, function () {
     var host = cppServer.address().address;
     var port = cppServer.address().port;
 
-    console.log('Cpp 代理 Mock 已启动 , listening at http://%s:%s'.green, host, port);
-    console.log("正在等待请求 ...\n".white.bgGreen);
+    console.log('Cpp 代理 Mock 已启动 , listening at http://%s:%s'.white.bgGreen, host, port);
 });
 

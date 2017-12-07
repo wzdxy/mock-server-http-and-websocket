@@ -16,7 +16,9 @@ router.get('/control/set',function(req,res){
 
 /* POST 设置参数 */
 router.post('/control/set/:objectid', function (req, res) {
-    res.send('set!');
+    let object = readJsonFile.getObject('/control/set',req.body.Id);
+    log.console(req,object);
+    res.send(object);
 });
 
 /* POST 添加对象 */
@@ -34,7 +36,11 @@ router.post('/control/del/:objectid', function (req, res) {
 });
 
 /* POST 修改对象属性 */
-router.post('/control/modify/:objectid', function (req, res) {});
+router.post('/control/modify/:objectid', function (req, res) {
+    let object = readJsonFile.getObject('/control/modify','modify');
+    log.console(req,object);
+    res.send(object);
+});
 
 /* POST 设置对象参数属性 */
 router.post('/control/config/:objectid/:paramid', function (req, res) {});
@@ -82,7 +88,8 @@ router.get('/control/typeparamlist/:company/:serial/:type', function(req, res) {
 /*POST 获取指定设备的实际接口信息 */
 router.post('/control/getiolists', function(req, res) {
     let type=req.body['Type'];
-    let object=readJsonFile.getObject('/control/getiolists',type+='_24012');
+    // let object=readJsonFile.getObject('/control/getiolists',type+='_24012');
+    let object=readJsonFile.getObject('/control/getiolists',type+='');
     log.console(req,object);
     res.send(JSON.stringify(object));
 });
@@ -93,7 +100,11 @@ router.post('/control/setiolists', function(req, res) {});
 /*POST 代理程序返回设备的参数改变消息 */
 router.post('/control/event/:objectid', function(req, res) {});
 
-/*POST 获取指定设备的指定参数 */
-router.post('/control/getparams/:objectid', function(req, res) {});
+/*GET 获取指定设备的指定参数 */
+router.get('/control/get/:objectid', function(req, res) {    
+    let object=readJsonFile.getObject('/control/getparams',req.params.objectid);
+    log.console(req,object);
+    res.send(JSON.stringify(object));
+});
 
 module.exports = router;

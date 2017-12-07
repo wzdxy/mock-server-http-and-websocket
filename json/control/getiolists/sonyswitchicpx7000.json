@@ -1,0 +1,38 @@
+{
+    "objectid": "undefined",
+    "messageid": "10001",
+    "result": {
+       "code": 0,
+       "message": "获取指定设备的实际接口信息成功"
+    },
+    "values": {
+       "Levels": [
+          {
+            "Outputs":[
+                {
+                    "Index":1,
+                    "Name":"d1"
+                },
+                {
+                    "Index":2,
+                    "Name":"d2"
+                },
+                {
+                    "Index":3,
+                    "Name":"d3"
+                }            
+            ],
+            "Inputs":[
+                {
+                    "Index":1,
+                    "Name":"d1"
+                },
+                {
+                    "Index":2,
+                    "Name":"d2"
+                }
+            ]
+          }
+       ]
+    }
+ }
