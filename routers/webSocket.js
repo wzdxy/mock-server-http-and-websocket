@@ -10,30 +10,11 @@ function start(wsPort){
         wsArray.push(ws);
         console.log('WebSocket Connected'.bgCyan+' at '+new Date().toLocaleString().gray+' Total Client(s):'+wsArray.filter(ws=>ws.OPEN===ws.readyState).length+"\n");
         let status=2,active=2,database=2,net=2;
-        setInterval(function () {    
-            let str=JSON.stringify({
-                Type:"ServerStatus",
-                Status:status,
-                Server:"192.168.3.48",
-                Params:{
-                    Active:active,
-                    Database:database,   
-                    Net:net
-                }
-            })
-            // console.log(str);        
-            if(ws.readyState===1){
-                ws.send(str);
-            }
-            status=status===2?5:2;
-            active=status===2?2:5;
-            database=status===2?2:5;                
-        },2000)
         ws.onopen=function(){
-            console.log('open');                
+            console.log('open');
         }
-        ws.onmessage = function(){
-            
+        ws.onmessage = function(e){
+            console.log('WebSocket onmessage',JSON.stringify(e.data))
         }
         ws.onclose = function(e,a){
             console.log('WebSocket Closed'.bgYellow+' Code:'+String(e.code).green+' '+e.reason+' at '+new Date().toLocaleString().gray+' Total Client(s):'+wsArray.filter(ws=>ws.OPEN===ws.readyState).length+"\n");    
